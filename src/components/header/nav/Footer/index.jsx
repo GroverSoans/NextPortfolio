@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <div className="flex w-full justify-between text-xs gap-10">
-      <a>Awwwards</a>
+      <a>Github</a>
       <a>Instagram</a>
-      <a>Dribble</a>
+      <a>Gmail</a>
       <a>LinkedIn</a>
     </div>
   )

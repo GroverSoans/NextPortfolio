@@ -12,7 +12,7 @@ const navItems = [
     href: "/",
   },
   {
-    title: "Work",
+    title: "Projects",
     href: "/work",
   },
   {
@@ -35,14 +35,14 @@ export default function Nav() {
       initial="initial" 
       animate="enter" 
       exit="exit" 
-      className="h-screen bg-[#292929] fixed right-0 top-0 text-white"
+      className="h-screen bg-[#292929] fixed right-0 top-0 z-10 text-white"
     >
       <div className="h-full p-[100px] flex flex-col justify-between box-border">
         <div 
           onMouseLeave={() => {setSelectedIndicator(pathname)}} 
           className="flex flex-col text-[56px] gap-3 mt-20"
         >
-          <div className="text-[#999] border-b border-[#999] uppercase text-[11px] mb-10">
+          <div className="text-[#fff] border-b border-[#fff] uppercase text-[11px] mb-10">
             <p>Navigation</p>
           </div>
           {navItems.map((data, index) => (

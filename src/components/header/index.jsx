@@ -15,8 +15,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="main">
-        <div className="fixed right-0 z-[1] p-[30px]">
+      <div className="main ">
+        <div className="fixed right-0 z-20 p-[30px]">
           <div 
             onClick={() => {setIsActive(!isActive)}} 
             className="w-20 h-20 rounded-full bg-primary cursor-pointer flex items-center justify-center"
@@ -26,7 +26,7 @@ export default function Home() {
                 className={`
                   before:content-[''] before:block before:h-[1px] before:w-[40%] before:mx-auto before:bg-white before:relative before:transition-transform before:duration-300
                   after:content-[''] after:block after:h-[1px] after:w-[40%] after:mx-auto after:bg-white after:relative after:transition-transform after:duration-300
-                  ${isActive ? 
+                  ${!isActive ? 
                     'before:rotate-45 before:top-0 after:-rotate-45 after:top-[-1px]' : 
                     'before:top-[5px] after:top-[-5px]'
                   }
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </div>
       <AnimatePresence mode="wait">
-        {isActive && <Nav />}
+        {!isActive && <Nav />}
       </AnimatePresence>
     </>
   )
