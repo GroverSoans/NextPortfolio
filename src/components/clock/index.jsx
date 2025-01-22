@@ -29,7 +29,7 @@ export default function Clock() {
   const timezone = time.toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2]
 
   return (
-    <div className="text-white flex justify-center p-[30px] text-xl">
+    <div>
       {hours}:{minutes}:{seconds} {ampm} {timezone}
     </div>
   )
