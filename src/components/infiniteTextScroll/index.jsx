@@ -31,10 +31,10 @@ export default function InfiniteTextScroll() {
     <main className="relative flex h-screen mb-screen overflow-hidden cursor-default">
       <div className="absolute top-[calc(100vh-350px)]">
         <div className="relative whitespace-nowrap">
-          <p ref={firstText} className="relative m-0 text-white text-[230px] font-bold pr-[50px] select-none">
+          <p ref={firstText} className="relative m-0 text-light-primary text-[230px] font-bold pr-[50px] select-none">
             Software Developer -
           </p>
-          <p ref={secondText} className="absolute left-full top-0 m-0 text-white text-[230px] font-bold pr-[50px] select-none">
+          <p ref={secondText} className="absolute left-full top-0 m-0 text-light-primary text-[230px] font-bold pr-[50px] select-none">
             Software Developer -
           </p>
         </div>

@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react'
 
 export default function Clock() {
   const [time, setTime] = useState(new Date())
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const timer = setInterval(() => {
       setTime(new Date())
     }, 1000)
@@ -19,6 +21,9 @@ export default function Clock() {
   const formatHours = (hours) => {
     return hours % 12 || 12 // Convert 24h to 12h format
   }
+
+  // Don't render anything until mounted (client-side)
+  if (!mounted) return null
 
   const hours = formatNumber(formatHours(time.getHours()))
   const minutes = formatNumber(time.getMinutes())

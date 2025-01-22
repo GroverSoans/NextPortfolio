@@ -1,10 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: ["class"],
+    darkMode: 'media',
     content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
   	extend: {
@@ -48,7 +46,14 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+  			light: {
+  				background: '#F5f5f5',
+  				text: '#383838',
+  				primary: '#595958',
+  				secondary: '#E40066', // pink-500
+  				accent: '#3A4F41',
+  			},
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

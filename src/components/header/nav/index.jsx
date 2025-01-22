@@ -6,6 +6,8 @@ import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
 
+
+
 const navItems = [
   {
     title: "Home",
@@ -13,7 +15,7 @@ const navItems = [
   },
   {
     title: "Projects",
-    href: "/work",
+    href: "/projects",
   },
   {
     title: "About",
