@@ -2,12 +2,14 @@
 import ProjectCard from "@/components/ProjectCard"
 import { useNavStore } from '@/store/navStore';
 import { projects } from '@/constants/projects';
+import Hero from "@/components/hero";
 
 export default function Projects() {
   const isNavOpen = useNavStore((state) => state.isNavOpen);
 
   return (
-    <div className="bg-light-background min-h-screen overflow-y-auto">
+    <div className="bg-light-background min-h-screen overflow-y-auto ">
+      <Hero />
       <div className="container mx-auto py-8">
         <div className="mb-12">
           <h1 className="text-light-primary text-6xl font-bold mb-2">

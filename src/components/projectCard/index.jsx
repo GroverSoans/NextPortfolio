@@ -79,7 +79,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
           >
-            <Github className="h-5 w-5" />
+            <Github className="h-5 w-5 text-light-secondary" />
             View Source
           </a>
           <a
@@ -88,7 +88,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
           >
-            <ArrowUpRight className="h-5 w-5" />
+            <ArrowUpRight className="h-5 w-5 text-light-secondary" />
             Live Demo
           </a>
         </motion.div>
