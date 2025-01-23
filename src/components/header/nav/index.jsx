@@ -37,7 +37,7 @@ export default function Nav() {
       initial="initial" 
       animate="enter" 
       exit="exit" 
-      className="h-screen bg-[#292929] fixed right-0 top-0 z-10 text-white"
+      className="h-screen bg-[#292929] fixed right-0 top-0 z-20 text-white"
     >
       <div className="h-full p-[100px] flex flex-col justify-between box-border">
         <div 

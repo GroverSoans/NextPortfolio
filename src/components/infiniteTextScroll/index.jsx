@@ -28,7 +28,7 @@ export default function InfiniteTextScroll() {
   }
 
   return (
-    <main className="relative flex h-screen mb-screen overflow-hidden cursor-default">
+    <main className="relative flex h-screen mb-screen overflow-hidden cursor-default z-10">
       <div className="absolute top-[calc(100vh-350px)]">
         <div className="relative whitespace-nowrap">
           <p ref={firstText} className="relative m-0 text-light-primary text-[230px] font-bold pr-[50px] select-none">

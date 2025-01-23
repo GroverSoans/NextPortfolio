@@ -15,11 +15,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="main ">
-        <div className="fixed right-0 z-20 p-[30px]">
+      <div className="main">
+        <div className="fixed right-0 z-30 p-[30px]">
           <div 
             onClick={() => {setIsActive(!isActive)}} 
-            className="w-20 h-20 rounded-full bg-primary cursor-pointer flex items-center justify-center"
+            className="w-10 h-10 rounded-full bg-light-primary cursor-pointer flex items-center justify-center"
           >
             <div className="w-full relative">
               <div 
