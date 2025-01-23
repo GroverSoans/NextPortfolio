@@ -1,16 +1,17 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import Nav from '@/components/header/nav';
+import { useNavStore } from '@/store/navStore';
 
-export default function Home() {
-  const [isActive, setIsActive] = useState(false);
+export default function Header() {
+  const { isNavOpen, toggleNav, closeNav } = useNavStore();
   const pathname = usePathname();
 
   useEffect(() => {
-    if(isActive) setIsActive(false)
+    if(isNavOpen) closeNav()
   }, [pathname])
 
   return (
@@ -18,26 +19,24 @@ export default function Home() {
       <div className="main">
         <div className="fixed right-0 z-30 p-[30px]">
           <div 
-            onClick={() => {setIsActive(!isActive)}} 
+            onClick={toggleNav} 
             className="w-10 h-10 rounded-full bg-light-primary cursor-pointer flex items-center justify-center"
           >
             <div className="w-full relative">
-              <div 
-                className={`
-                  before:content-[''] before:block before:h-[1px] before:w-[40%] before:mx-auto before:bg-white before:relative before:transition-transform before:duration-300
-                  after:content-[''] after:block after:h-[1px] after:w-[40%] after:mx-auto after:bg-white after:relative after:transition-transform after:duration-300
-                  ${!isActive ? 
-                    'before:rotate-45 before:top-0 after:-rotate-45 after:top-[-1px]' : 
-                    'before:top-[5px] after:top-[-5px]'
-                  }
-                `}
-              />
+              <div className={`
+                before:content-[''] before:block before:h-[1px] before:w-[40%] before:mx-auto before:bg-white before:relative before:transition-transform before:duration-300
+                after:content-[''] after:block after:h-[1px] after:w-[40%] after:mx-auto after:bg-white after:relative after:transition-transform after:duration-300
+                ${!isNavOpen ? 
+                  'before:rotate-45 before:top-0 after:-rotate-45 after:top-[-1px]' : 
+                  'before:top-[5px] after:top-[-5px]'
+                }
+              `}/>
             </div>
           </div>
         </div>
       </div>
       <AnimatePresence mode="wait">
-        {!isActive && <Nav />}
+        {!isNavOpen && <Nav />}
       </AnimatePresence>
     </>
   )
