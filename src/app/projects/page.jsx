@@ -9,7 +9,7 @@ export default function Projects() {
 
   return (
     <div className="bg-light-background min-h-screen overflow-y-auto ">
-      <Hero />
+      {/* <Hero /> */}
       <div className="container mx-auto py-8">
         <div className="mb-12">
           <h1 className="text-light-primary text-6xl font-bold mb-2">

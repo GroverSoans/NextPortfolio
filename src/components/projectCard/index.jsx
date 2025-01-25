@@ -1,34 +1,56 @@
-import Image from "next/image"
+'use client'
+import { useState } from 'react';
+import Image from 'next/image';
 import { motion } from "framer-motion"
 import { Github, ArrowUpRight } from "lucide-react"
 
-
-export default function ProjectCard({
+const ProjectCard = ({
   title,
   description,
   imageUrl,
+  videoUrl,
   githubUrl,
   imageOnRight = false,
   tags = [],
-}) {
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       className="group relative grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
         className={`relative h-[300px] overflow-hidden rounded-xl ${imageOnRight ? "md:order-last" : ""}`}
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.2 }}
       >
-        <Image
-          src={imageUrl || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        {videoUrl && isHovered ? (
+          <video
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            src={videoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            ref={(el) => {
+              if (el) {
+                el.playbackRate = 4.0;
+              }
+            }}
+          />
+        ) : (
+          <Image
+            src={imageUrl || "/placeholder.svg"}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        )}
       </motion.div>
 
       <div className="flex flex-col justify-between space-y-4">
@@ -96,3 +118,5 @@ export default function ProjectCard({
     </motion.div>
   )
 }
+
+export default ProjectCard;
