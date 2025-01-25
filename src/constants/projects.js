@@ -1,9 +1,10 @@
 export const projects = [
   {
     title: "Admin Dashboard",
+    // Full-stack application showcasing modern web development practices
     description: "A full-stack application built with Next.js, featuring real-time updates, server-side rendering, and a modern user interface. Implements the latest web development practices and performance optimizations.",
     imageUrl: "/images/AdminDash.jpg",
-    videoUrl: "/projectVideos/AdminDash.mp4",
+    videoUrl: "/projectVideos/AdminDash.mp4",  // Video preview on hover
     githubUrl: "https://github.com/yourusername/your-repo",
     tags: ["Next.js", "React", "TypeScript", "GraphQL"],
     imageOnRight: false

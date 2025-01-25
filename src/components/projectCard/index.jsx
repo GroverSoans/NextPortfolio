@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { motion } from "framer-motion"
 import { Github, ArrowUpRight } from "lucide-react"
 
+// ProjectCard component displays individual project information
+// Includes image/video preview, description, and links
 const ProjectCard = ({
   title,
   description,
@@ -13,6 +15,7 @@ const ProjectCard = ({
   imageOnRight = false,
   tags = [],
 }) => {
+  // State to handle video preview on hover
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -24,11 +27,13 @@ const ProjectCard = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Media container - handles both image and video display */}
       <motion.div
         className={`relative h-[300px] overflow-hidden rounded-xl ${imageOnRight ? "md:order-last" : ""}`}
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.2 }}
       >
+        {/* Conditional render of video on hover or static image */}
         {videoUrl && isHovered ? (
           <video
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -39,7 +44,7 @@ const ProjectCard = ({
             playsInline
             ref={(el) => {
               if (el) {
-                el.playbackRate = 4.0;
+                el.playbackRate = 4.0;  // Speed up video playback
               }
             }}
           />
@@ -53,6 +58,7 @@ const ProjectCard = ({
         )}
       </motion.div>
 
+      {/* Project information section */}
       <div className="flex flex-col justify-between space-y-4">
         <div className="space-y-4">
           <motion.h2
@@ -116,7 +122,7 @@ const ProjectCard = ({
         </motion.div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 export default ProjectCard;
