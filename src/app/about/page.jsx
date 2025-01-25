@@ -2,7 +2,7 @@
 import { useNavStore } from '@/store/navStore';
 import { education } from '@/constants/education';
 import EducationCard from '@/components/EducationCard';
-import PageTransition from '@/components/PageTransition';
+import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
 
 // Animation variants for content sections

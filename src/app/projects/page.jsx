@@ -2,7 +2,7 @@
 import ProjectCard from "@/components/ProjectCard"
 import { useNavStore } from '@/store/navStore';
 import { projects } from '@/constants/projects';
-import PageTransition from '@/components/PageTransition';
+import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
 
 const contentVariants = {

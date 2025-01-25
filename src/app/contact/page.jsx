@@ -3,7 +3,7 @@
 import { Mail, Github, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useNavStore } from '@/store/navStore';
-import PageTransition from '@/components/PageTransition';
+import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
 
 const contentVariants = {
