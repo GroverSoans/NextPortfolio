@@ -1,5 +1,7 @@
 "use client";
 import { useNavStore } from '@/store/navStore';
+import { education } from '@/constants/education';
+import EducationCard from '@/components/EducationCard';
 
 export default function AboutPage() {
   const isNavOpen = useNavStore((state) => state.isNavOpen);
@@ -51,6 +53,23 @@ export default function AboutPage() {
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="mt-20">
+            <div className="mb-12">
+              <h1 className="text-light-primary text-6xl font-bold mb-2">
+                EDUCATION<span className="text-light-secondary">.</span>
+              </h1>
+              <p className="text-light-primary text-xl max-w-2xl">My academic journey</p>
+            </div>
+            <div className="space-y-16">
+              {education.map((edu, index) => (
+                <EducationCard
+                  key={index}
+                  {...edu}
+                />
+              ))}
             </div>
           </div>
         </div>
