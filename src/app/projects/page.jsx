@@ -5,6 +5,7 @@ import { projects } from '@/constants/projects';
 import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
 import Blob from '@/components/blob';
+
 const contentVariants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 }
@@ -20,12 +21,11 @@ export default function Projects() {
         <div className="container mx-auto py-8 relative z-10">
           <motion.div 
             variants={contentVariants}
-            className="mb-12"
+            className="mb-1"
           >
-            <h1 className="text-light-primary text-6xl font-bold mb-2">
+            <h1 className="text-light-primary text-[150px] font-bold">
               PROJECTS<span className="text-light-secondary">.</span>
             </h1>
-            <p className="text-light-primary text-xl max-w-2xl">Here are some of my recent projects</p>
           </motion.div>
           <div className="space-y-12">
             <div className={`space-y-16 transition-all duration-500 ${!isNavOpen ? 'pr-96' : 'pr-16'}`}>

@@ -23,12 +23,11 @@ export default function AboutPage() {
         <div className="container mx-auto py-8 relative z-10">
           <motion.div 
             variants={contentVariants}
-            className="mb-12"
+            className="mb-1"
           >
-            <h1 className="text-light-primary text-6xl font-bold mb-2">
+            <h1 className="text-light-primary text-[150px] font-bold">
               ABOUT<span className="text-light-secondary">.</span>
             </h1>
-            <p className="text-light-primary text-xl max-w-2xl">Get to know more about me and what I do</p>
           </motion.div>
 
           <div className={`transition-all duration-500 ${!isNavOpen ? 'pr-96' : 'pr-16'}`}>
@@ -99,7 +98,6 @@ export default function AboutPage() {
                 <h1 className="text-light-primary text-6xl font-bold mb-2">
                   EDUCATION<span className="text-light-secondary">.</span>
                 </h1>
-                <p className="text-light-primary text-xl max-w-2xl">My academic journey</p>
               </motion.div>
               <div className="space-y-16">
                 {education.map((edu, index) => (

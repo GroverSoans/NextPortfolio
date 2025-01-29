@@ -22,12 +22,12 @@ export default function Contact() {
         <div className="container mx-auto py-8 relative z-10">
           <motion.div 
             variants={contentVariants}
-            className="mb-12"
+            className="mb-1"
           >
-            <h1 className="text-light-primary text-6xl font-bold mb-2">
+            <h1 className="text-light-primary text-[150px] font-bold">
               CONTACT<span className="text-light-secondary">.</span>
             </h1>
-            <p className="text-light-primary text-xl max-w-2xl">Get in touch</p>
+
           </motion.div>
           <div className={`transition-all duration-500 ${!isNavOpen ? 'pr-96' : 'pr-16'}`}>
             <div className="grid md:grid-cols-2 gap-12">
@@ -40,11 +40,11 @@ export default function Contact() {
 
                 <div className="space-y-4">
                   <a
-                    href="mailto:hello@example.com"
+                    href="mailto:groverpsoans@gmail.com.com"
                     className="flex items-center gap-2 text-light-primary hover:text-light-secondary"
                   >
                     <Mail className="w-5 h-5" />
-                    hello@example.com
+                    groverpsoans@gmail.com
                   </a>
                   <div className="flex gap-4">
                     <Button variant="outline" size="icon" className="text-light-primary border-light-primary hover:text-light-secondary">
@@ -91,7 +91,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <Button className="w-full bg-light-primary hover:bg-light-primary/90 text-white">Send Message</Button>
+                <Button className="w-full bg-light-primary hover:bg-light-secondary/90 text-white">Send Message</Button>
               </form>
             </div>
           </div>

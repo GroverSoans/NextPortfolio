@@ -1,12 +1,13 @@
 "use client";
 import { useNavStore } from '@/store/navStore';
 import PageTransition from '@/components/pageTransition';
-import { motion } from "framer-motion";
 import Hero from "@/components/hero";
 import InfiniteTextScroll from "@/components/infiniteTextScroll";
 import Blob from '@/components/blob';
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+
+
 
 const contentVariants = {
   initial: { opacity: 0, y: 20 },
@@ -16,10 +17,6 @@ const contentVariants = {
 export default function Home() {
   const isNavOpen = useNavStore((state) => state.isNavOpen);
 
-  const handleDownload = () => {
-    const resumeUrl = '/resume.pdf';
-    window.open(resumeUrl, '_blank');
-  };
 
   return (
     <PageTransition>
@@ -27,18 +24,18 @@ export default function Home() {
         <Blob />
         <Hero />
         <div className={`transition-all duration-500 ${!isNavOpen ? 'pr-96' : 'pr-16'}`}>
-          <div className="h-screen flex flex-col justify-center pl-20 pb-20 z-30">
-            <span className="text-light-primary text-6xl font-bold mb-4 relative z-10">
+          <div className="h-screen flex flex-col justify-center pl-20 pb-32 z-30">
+            <span className="text-light-primary text-[150px] font-bold relative z-10">
               HELLO<span className="text-light-secondary">.</span>
             </span>
-            <p className="text-light-primary text-xl max-w-2xl relative z-10 mb-8">
-              My name is grover soans and i am a full stack developer that specializes in web development
+            <p className="text-light-primary text-2xl max-w-2xl relative z-10 mb-8">
+              Hi, I'm Grover Soans, a full-stack developer passionate about building modern, scalable web applications.
             </p>
             <Button 
-              onClick={handleDownload}
-              className="relative z-10 w-fit flex items-center gap-2 bg-light-secondary hover:bg-light-secondary/90 text-white"
+              onClick={() => window.open('/resume/GroverSoansResumeUpdated.pdf', '_blank')}
+              className="relative z-20 w-fit flex items-center gap-2 bg-light-primary hover:bg-light-secondary text-white  px-4 py-2 rounded-full"
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4" /> 
               Download Resume
             </Button>
           </div>
