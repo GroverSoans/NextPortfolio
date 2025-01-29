@@ -6,8 +6,6 @@ import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
 
-
-
 const navItems = [
   {
     title: "Home",
@@ -37,7 +35,7 @@ export default function Nav() {
       initial="initial" 
       animate="enter" 
       exit="exit" 
-      className="h-screen bg-[#292929] fixed right-0 top-0 z-20 text-white"
+      className="h-[calc(100vh-4rem)] bg-[#292929] fixed right-0 top-8 z-20 text-white mx-8"
     >
       <div className="h-full p-[100px] flex flex-col justify-between box-border">
         <div 

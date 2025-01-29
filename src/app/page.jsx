@@ -16,11 +16,7 @@ export default function Home() {
   return (
     <PageTransition>
       <div className="bg-light-background h-screen relative overflow-hidden">
-        <motion.div 
-          variants={contentVariants}
-        >
-          <Hero/>
-        </motion.div>
+        <Hero />
         <div className={`transition-all duration-500 ${!isNavOpen ? 'pr-96' : 'pr-16'}`}>
           <div className="h-screen flex flex-col justify-center pl-20 pb-20 z-30">
             <span className="text-light-primary text-6xl font-bold mb-4">

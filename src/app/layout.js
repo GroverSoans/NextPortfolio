@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
-import Hero from "@/components/hero";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,7 +25,6 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
-        
       </body>
     </html>
   );
