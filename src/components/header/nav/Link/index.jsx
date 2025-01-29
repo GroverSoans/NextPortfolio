@@ -18,7 +18,7 @@ export default function Index({data, isActive, setSelectedIndicator}) {
       <motion.div 
         variants={scale} 
         animate={isActive ? "open" : "closed"} 
-        className="w-[10px] h-[10px] bg-pink-500 rounded-full absolute left-[-30px]"
+        className="w-[10px] h-[10px] bg-light-secondary rounded-full absolute left-[-30px]"
       />
       <Link href={href}>{title}</Link>
     </motion.div>

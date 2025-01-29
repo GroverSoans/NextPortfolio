@@ -4,7 +4,7 @@ import { useNavStore } from '@/store/navStore';
 import { projects } from '@/constants/projects';
 import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
-
+import Blob from '@/components/blob';
 const contentVariants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 }
@@ -16,7 +16,8 @@ export default function Projects() {
   return (
     <PageTransition>
       <div className="bg-light-background min-h-screen overflow-y-auto">
-        <div className="container mx-auto py-8">
+        <Blob />
+        <div className="container mx-auto py-8 relative z-10">
           <motion.div 
             variants={contentVariants}
             className="mb-12"

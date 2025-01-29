@@ -4,6 +4,7 @@ import { education } from '@/constants/education';
 import EducationCard from '@/components/EducationCard';
 import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
+import Blob from '@/components/blob';
 
 // Animation variants for content sections
 const contentVariants = {
@@ -18,7 +19,8 @@ export default function AboutPage() {
   return (
     <PageTransition>
       <div className="bg-light-background min-h-screen overflow-y-auto">
-        <div className="container mx-auto py-8">
+        <Blob />
+        <div className="container mx-auto py-8 relative z-10">
           <motion.div 
             variants={contentVariants}
             className="mb-12"

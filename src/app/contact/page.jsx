@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useNavStore } from '@/store/navStore';
 import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
+import Blob from '@/components/blob';
 
 const contentVariants = {
   initial: { opacity: 0, y: 20 },
@@ -17,7 +18,8 @@ export default function Contact() {
   return (
     <PageTransition>
       <div className="bg-light-background min-h-screen overflow-y-auto">
-        <div className="container mx-auto py-8">
+        <Blob />
+        <div className="container mx-auto py-8 relative z-10">
           <motion.div 
             variants={contentVariants}
             className="mb-12"
