@@ -17,10 +17,10 @@ export default function Header() {
   return (
     <>
       <div className="main">
-        <div className="fixed right-0 z-30 px-16 py-[50px]">
+        <div className="fixed right-0 z-30 px-16 py-10">
           <div 
             onClick={toggleNav} 
-            className="w-10 h-10 rounded-full bg-light-primary cursor-pointer flex items-center justify-center"
+            className="w-16 h-16 rounded-full bg-light-primary cursor-pointer flex items-center justify-center"
           >
             <div className="w-full relative">
               <div className={`

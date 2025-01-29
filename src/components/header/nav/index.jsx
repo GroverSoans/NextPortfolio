@@ -37,7 +37,7 @@ export default function Nav() {
       initial="initial" 
       animate="enter" 
       exit="exit" 
-      className="h-[calc(100vh-4rem)] bg-[#292929]/95 backdrop-blur-sm fixed right-0 top-8 z-20 text-white mx-8"
+      className="h-[calc(100vh-4rem)] bg-[#292929]/95 rounded-3xl backdrop-blur-sm fixed right-0 top-8 z-20 text-white mx-8"
     >
       <div className="h-full p-[100px] flex flex-col justify-between box-border">
         <div 

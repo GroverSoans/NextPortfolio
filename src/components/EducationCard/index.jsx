@@ -16,7 +16,7 @@ const EducationCard = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="group relative grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100"
+      className="group relative grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-white/50 backdrop-blur-sm rounded-2xl border-2 border-light-primary/10 hover:border-light-secondary transition-colors duration-300"
     >
       <motion.div
         className="relative h-[300px] overflow-hidden rounded-xl"

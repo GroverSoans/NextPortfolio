@@ -5,6 +5,7 @@ import EducationCard from '@/components/EducationCard';
 import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
 import Blob from '@/components/blob';
+import Skills from '@/components/skills';
 
 // Animation variants for content sections
 const contentVariants = {
@@ -46,45 +47,20 @@ export default function AboutPage() {
                   variants={contentVariants}
                   className="text-light-primary leading-relaxed"
                 >
-                  I'm a full-stack developer passionate about building digital experiences that make a difference. With
-                  expertise in modern web technologies and a keen eye for design, I create solutions that are both functional
-                  and beautiful.
+                  I'm a full-stack developer driven by a passion for creating impactful digital experiences. Blending modern
+                   web technologies with thoughtful design, I build intuitive, high-performance solutions that seamlessly
+                    connect form and function.
                 </motion.p>
                 <motion.p 
                   variants={contentVariants}
                   className="text-light-primary leading-relaxed"
                 >
-                  When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
-                  sharing my knowledge through technical writing and mentoring.
+                  When I'm not coding, I'm building personal projects, exploring emerging technologies, or finding new ways to improve my
+                  craft—whether through hands-on experimentation or deep dives into documentation.
                 </motion.p>
               </div>
 
-              <motion.div 
-                variants={contentVariants}
-                className="space-y-6"
-              >
-                <h2 className="text-2xl font-semibold text-light-primary">My Skills</h2>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <h3 className="font-medium text-light-primary">Frontend</h3>
-                    <ul className="space-y-1 text-light-primary">
-                      <motion.li variants={contentVariants}>React</motion.li>
-                      <motion.li variants={contentVariants}>Next.js</motion.li>
-                      <motion.li variants={contentVariants}>TypeScript</motion.li>
-                      <motion.li variants={contentVariants}>Tailwind CSS</motion.li>
-                    </ul>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-medium text-light-primary">Backend</h3>
-                    <ul className="space-y-1 text-light-primary">
-                      <motion.li variants={contentVariants}>Node.js</motion.li>
-                      <motion.li variants={contentVariants}>Python</motion.li>
-                      <motion.li variants={contentVariants}>GraphQL</motion.li>
-                      <motion.li variants={contentVariants}>PostgreSQL</motion.li>
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
+              <Skills />
             </motion.div>
 
             <motion.div 
