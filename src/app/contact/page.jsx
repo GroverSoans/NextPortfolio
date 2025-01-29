@@ -6,6 +6,8 @@ import { useNavStore } from '@/store/navStore';
 import PageTransition from '@/components/pageTransition';
 import { motion } from "framer-motion";
 import Blob from '@/components/blob';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const contentVariants = {
   initial: { opacity: 0, y: 20 },
@@ -14,6 +16,34 @@ const contentVariants = {
 
 export default function Contact() {
   const isNavOpen = useNavStore((state) => state.isNavOpen);
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+    setSuccess(false);
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+      setSuccess(true);
+      formRef.current.reset();
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <PageTransition>
@@ -40,7 +70,7 @@ export default function Contact() {
 
                 <div className="space-y-4">
                   <a
-                    href="mailto:groverpsoans@gmail.com.com"
+                    href="mailto:groverpsoans@gmail.com"
                     className="flex items-center gap-2 text-light-primary hover:text-light-secondary"
                   >
                     <Mail className="w-5 h-5" />
@@ -57,14 +87,15 @@ export default function Contact() {
                 </div>
               </div>
 
-              <form className="space-y-4">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-sm font-medium text-light-primary">
                     Name
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    name="name"
+                    required
                     className="w-full p-2 bg-white/50 border border-light-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-light-secondary text-light-primary"
                   />
                 </div>
@@ -75,7 +106,8 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
-                    id="email"
+                    name="email"
+                    required
                     className="w-full p-2 bg-white/50 border border-light-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-light-secondary text-light-primary"
                   />
                 </div>
@@ -85,13 +117,27 @@ export default function Contact() {
                     Message
                   </label>
                   <textarea
-                    id="message"
+                    name="message"
+                    required
                     rows={5}
                     className="w-full p-2 bg-white/50 border border-light-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-light-secondary text-light-primary"
                   />
                 </div>
 
-                <Button className="w-full bg-light-primary hover:bg-light-secondary/90 text-white">Send Message</Button>
+                {success && (
+                  <p className="text-green-500">Message sent successfully!</p>
+                )}
+                {error && (
+                  <p className="text-red-500">Something went wrong. Please try again.</p>
+                )}
+
+                <Button 
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-light-primary hover:bg-light-secondary/90 text-white"
+                >
+                  {loading ? 'Sending...' : 'Send Message'}
+                </Button>
               </form>
             </div>
           </div>
