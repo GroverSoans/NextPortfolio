@@ -21,20 +21,20 @@ export default function AboutPage() {
     <PageTransition>
       <div className="bg-light-background min-h-screen overflow-y-auto">
         <Blob />
-        <div className="container mx-auto py-8 relative z-10">
+        <div className="container mx-auto py-8 px-6 relative z-10">
           <motion.div 
             variants={contentVariants}
             className="mb-1"
           >
-            <h1 className="text-light-primary text-[150px] font-bold">
+            <h1 className="text-light-primary text-5xl md:text-[100px] lg:text-[150px] font-bold">
               ABOUT<span className="text-light-secondary">.</span>
             </h1>
           </motion.div>
 
-          <div className={`transition-all duration-500 ${!isNavOpen ? 'pr-96' : 'pr-16'}`}>
+          <div className={`transition-all duration-500 ${!isNavOpen ? 'lg:pr-96' : 'pr-4 md:pr-16'}`}>
             <motion.div 
               variants={contentVariants}
-              className="grid md:grid-cols-2 gap-12"
+              className="grid md:grid-cols-2 gap-8 md:gap-12"
             >
               <div className="space-y-6">
                 <motion.h2 

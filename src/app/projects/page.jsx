@@ -18,17 +18,14 @@ export default function Projects() {
     <PageTransition>
       <div className="bg-light-background min-h-screen overflow-y-auto">
         <Blob />
-        <div className="container mx-auto py-8 relative z-10">
-          <motion.div 
-            variants={contentVariants}
-            className="mb-1"
-          >
-            <h1 className="text-light-primary text-[150px] font-bold">
+        <div className="container mx-auto py-8 px-6 relative z-10">
+          <motion.div variants={contentVariants} className="mb-1">
+            <h1 className="text-light-primary text-5xl md:text-[100px] lg:text-[150px] font-bold">
               PROJECTS<span className="text-light-secondary">.</span>
             </h1>
           </motion.div>
-          <div className="space-y-12">
-            <div className={`space-y-16 transition-all duration-500 ${!isNavOpen ? 'pr-96' : 'pr-16'}`}>
+          <div className="space-y-8 md:space-y-12">
+            <div className={`space-y-8 md:space-y-16 transition-all duration-500 ${!isNavOpen ? 'lg:pr-96' : 'pr-4 md:pr-16'}`}>
               {projects.map((project, index) => (
                 <motion.div
                   key={index}
