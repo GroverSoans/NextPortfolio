@@ -27,6 +27,7 @@ const EducationCard = ({
           src={imageUrl || "/placeholder.svg"}
           alt={school}
           fill
+          sizes="(max-width: 768px) 200px, 200px"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </motion.div>

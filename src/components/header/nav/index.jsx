@@ -42,7 +42,7 @@ export default function Nav() {
       <div className="h-full p-8 md:p-[100px] flex flex-col justify-between box-border">
         <div 
           onMouseLeave={() => {setSelectedIndicator(pathname)}} 
-          className="flex flex-col md:text-[56px] text-3xlgap-3 mt-20"
+          className="flex flex-col  md:text-[56px] gap-3 mt-20"
         >
           <div className="text-[#fff] border-b border-[#fff] uppercase text-[11px] mb-10">
             <p>Navigation</p>

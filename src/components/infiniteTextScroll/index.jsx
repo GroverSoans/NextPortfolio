@@ -6,26 +6,49 @@ import gsap from 'gsap';
 export default function InfiniteTextScroll() {
   const firstText = useRef(null);
   const secondText = useRef(null);
-  let xPercent = 0;
-  let direction = -1;
+  const animationRef = useRef(null);
+  const xPercentRef = useRef(0);
+  const direction = -1;
 
   useEffect(() => {
-    requestAnimationFrame(animation);
-  }, []);
+    let isMounted = true;
 
-  const animation = () => {
-    if(xPercent <= -100) {
-      xPercent = 0;
-    }
-    if(xPercent > 0) {
-      xPercent = -100;
-    }
-    
-    gsap.set(firstText.current, {xPercent: xPercent});
-    gsap.set(secondText.current, {xPercent: xPercent});
-    xPercent += 0.1 * direction;
-    requestAnimationFrame(animation);
-  }
+    const animation = () => {
+      if (!isMounted) return;
+
+      const first = firstText.current;
+      const second = secondText.current;
+
+      if (!first || !second) return;
+
+      if (xPercentRef.current <= -100) {
+        xPercentRef.current = 0;
+      }
+      if (xPercentRef.current > 0) {
+        xPercentRef.current = -100;
+      }
+      
+      try {
+        gsap.set(first, { xPercent: xPercentRef.current });
+        gsap.set(second, { xPercent: xPercentRef.current });
+        xPercentRef.current += 0.1 * direction;
+        animationRef.current = requestAnimationFrame(animation);
+      } catch (error) {
+        if (animationRef.current) {
+          cancelAnimationFrame(animationRef.current);
+        }
+      }
+    };
+
+    animationRef.current = requestAnimationFrame(animation);
+
+    return () => {
+      isMounted = false;
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
 
   return (
     <main className="relative flex h-screen mb-screen overflow-hidden cursor-default z-10">
@@ -40,5 +63,5 @@ export default function InfiniteTextScroll() {
         </div>
       </div>
     </main>
-  )
+  );
 }
