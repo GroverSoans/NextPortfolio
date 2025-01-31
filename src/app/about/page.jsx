@@ -31,7 +31,7 @@ export default function AboutPage() {
             </h1>
           </motion.div>
 
-          <div className={`transition-all duration-500 ${!isNavOpen ? 'lg:pr-96' : 'pr-4 md:pr-16'}`}>
+          <div className={`transition-all duration-500 ${!isNavOpen ? 'lg:pr-96' : 'lg:pr-16'}`}>
             <motion.div 
               variants={contentVariants}
               className="grid md:grid-cols-2 gap-8 md:gap-12"

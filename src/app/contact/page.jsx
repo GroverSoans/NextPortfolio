@@ -55,7 +55,7 @@ export default function Contact() {
               CONTACT<span className="text-light-secondary">.</span>
             </h1>
           </motion.div>
-          <div className={`transition-all duration-500 ${!isNavOpen ? 'lg:pr-96' : 'pr-4 md:pr-16'}`}>
+          <div className={`transition-all duration-500 ${!isNavOpen ? 'lg:pr-96' : 'lg:pr-16'}`}>
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <div className="space-y-6">
                 <h2 className="text-2xl font-semibold text-light-primary">Get in Touch</h2>

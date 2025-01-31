@@ -25,7 +25,7 @@ export default function Projects() {
             </h1>
           </motion.div>
           <div className="space-y-8 md:space-y-12">
-            <div className={`space-y-8 md:space-y-16 transition-all duration-500 ${!isNavOpen ? 'lg:pr-96' : 'pr-4 md:pr-16'}`}>
+            <div className={`space-y-8 md:space-y-16 transition-all duration-500 ${!isNavOpen ? 'lg:pr-96' : 'lg:pr-16'}`}>
               {projects.map((project, index) => (
                 <motion.div
                   key={index}
